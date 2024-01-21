@@ -1,48 +1,182 @@
-body{
+body {
     background-color: transparent;
     margin: 0;
 }
-.top-header{
-    height:10vh;
-    width:100vw;
+root{
+    --cart-btn-width:10vw;
+    --cart-btn-height: 4vh;
+}
+#content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.top-header {
+    height: 10vh;
+    width: 100vw;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-
+    justify-content: center;
+    gap: 5%;
     align-items: center;
     text-align: center;
-
-    color:black;
+    color: black;
     background-color: white;
-    border:none;
+    border: none;
     box-shadow: 0px 10px 10px rgba(128, 128, 128, 0.221);
-
 }
-.top-header-text{
-    border: solid red 1px;
+
+.top-header-text {
     display: flex;
     justify-content: center;
-    width:80%;
-    justify-self: center;
+    align-self: center; /* Center the top-header-text vertically */
     text-align: center;
-    color:black;
+    color: black;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: large;
+    width: 60vw; /* Adjusted width for better centering */
 }
-.cart{
-    background-color: black;
-    color:white;
-    border:none;
-    border-radius:5px;
-    width:10%;
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
     height:40%;
-    margin-right:5%;
+    position: relative; /* Add relative positioning to the container */
+}
+
+.btn-container .cart {
+    align-self: center;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 10vw;
+    height: 100%;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     justify-self: right;
 }
-.icon{
-    margin:10px;
+
+.btn-container .counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    width: 13px;
+    height: 13px;
+    position: absolute; /* Use absolute positioning */
+    top: -6px; /* Adjust the top position */
+    right: -6px; /* Adjust the right position */
+    text-align: center;
+    font-size: 10px;
+}
+
+
+.icon {
+    width: 24px;
+    margin-left: calc((10% - 24px) / 2);
+    margin-right: calc((10% - 24px) / 2);
+    aspect-ratio: 1 / 1;
+    align-self: center;
+    background-color: transparent;
+    background-size: cover;
+    border: none;
+    border-radius: 50%;
+}
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+    padding:5%;
+    width: 60vw;
+    height: auto;
+}
+
+.position{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:5%;
+    width:70%;
+    aspect-ratio: 1 / 1;
+    background-color: whitesmoke;
+    border:none;
+    border-radius:10px;
+    box-shadow: 0px 0px 5px lightgray;
+}
+
+.photo{
+    background-color: lightgray;
+    width:90%;
+    height:70%;
+    border:none;
+    border-radius:5px;
+    background-size:cover;
+    background-color: transparent;
+}
+
+.position-title, .price{
+    color:black;
+    font-size: large;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin:5%;
+}
+
+.add-btn{
+    display:none;
+    color:white;
+    font-weight: bold;
+    background-color: black;
+    border:none;
+    border-radius: 5px;
+    width:30%;
+    height:10%;
+}
+
+.add-btn.active{
+    display:block;
+}
+
+.add-btn-container{
+    display:none;
+    justify-content: space-between;
+    align-items: center;
+    width:50%;
+    height:10%;
+}
+
+.add-btn-container.active{
+    display: flex;
+}
+
+.plus-btn, .minus-btn{
+    width:20px;
+    aspect-ratio: 1/1;
+    background-color: black;
+    color:white;
+    font-weight: bold;
+    box-shadow: 3px 3px 3px lightgray;
+    border:none;
+    border-radius: 50%;
+}
+
+.counter-display{
+    width:50%;
+    height:100%;
+    background-color: lightgray;
+    border:none;
+    border-radius: 5px;
+
 }
